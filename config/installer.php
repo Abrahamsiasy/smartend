@@ -14,7 +14,6 @@ if (!checkdnsrr($SERVER_NAME, 'NS')) {
         'storage/logs/' => '755',
         'storage/app/' => '755',
         'storage/app/public/' => '755',
-        'storage/app/public/uploads/' => '755',
         'bootstrap/cache/' => '755',
     ];
 }
