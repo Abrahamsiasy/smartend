@@ -4,22 +4,18 @@ if (!checkdnsrr($SERVER_NAME, 'NS')) {
     $permissions = [
         'storage/framework/' => '',
         'storage/logs/' => '',
+        'storage/app/' => '',
+        'storage/app/public/' => '',
         'bootstrap/cache/' => '',
     ];
 } else {
     $permissions = [
         'storage/framework/' => '755',
         'storage/logs/' => '755',
+        'storage/app/' => '755',
+        'storage/app/public/' => '755',
+        'storage/app/public/uploads/' => '755',
         'bootstrap/cache/' => '755',
-        '../uploads/' => '755',
-        '../uploads/banners' => '755',
-        '../uploads/contacts' => '755',
-        '../uploads/inbox' => '755',
-        '../uploads/pattern' => '755',
-        '../uploads/sections' => '755',
-        '../uploads/settings' => '755',
-        '../uploads/topics' => '755',
-        '../uploads/users' => '755',
     ];
 }
 
