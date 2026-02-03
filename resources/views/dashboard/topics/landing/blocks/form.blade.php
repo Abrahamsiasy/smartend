@@ -18,10 +18,7 @@
                                 @php
                                     use Illuminate\Support\Facades\File;
 
-                                    $imagePath = asset('assets/dashboard/images/blocks/');
-                                    if (!File::exists($imagePath)) {
-                                    $imagePath = str_replace('/core/public','',public_path('assets/dashboard/images/blocks/'));
-                                    }
+                                    $imagePath = public_path('assets/dashboard/images/blocks/');
                                     $images = [];
 
                                     if (File::exists($imagePath)) {

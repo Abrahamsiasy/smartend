@@ -2944,7 +2944,7 @@ class TopicsController extends Controller
             $WebmasterSection = WebmasterSection::find(decrypt($request->section_id));
             if (!empty($WebmasterSection)) {
                 if ($validator->passes()) {
-                    $xls_file_path = (trim(env('LOCAL_UPLOADS_PATH')) !== '' ? env('LOCAL_UPLOADS_PATH') : public_path('uploads'))."/".$this->uploadPath."/".$request->file_name;
+                    $xls_file_path = storage_path('app/public/uploads')."/".$this->uploadPath."/".$request->file_name;
                     if (file_exists($xls_file_path)) {
                         $import = new TopicsImport($request, $WebmasterSection->id);
                         Excel::import($import, $xls_file_path);
@@ -3059,7 +3059,7 @@ class TopicsController extends Controller
                 $ExcelColumns = [];
                 $row_key = 0;
                 if ($ExcelFinalName != "") {
-                    $xls_file_path = (trim(env('LOCAL_UPLOADS_PATH')) !== '' ? env('LOCAL_UPLOADS_PATH') : public_path('uploads'))."/".$this->uploadPath."/".$ExcelFinalName;
+                    $xls_file_path = storage_path('app/public/uploads')."/".$this->uploadPath."/".$ExcelFinalName;
                     $NewImport = new ReadExcelFile();
                     Excel::import($NewImport, $xls_file_path);
                     $ExcelColumns = $NewImport->data;

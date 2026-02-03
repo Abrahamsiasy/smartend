@@ -19,9 +19,6 @@
                                     use Illuminate\Support\Facades\File;
 
                                     $imagePath = public_path('assets/dashboard/images/blocks/');
-                                    if (!File::exists($imagePath)) {
-                                    $imagePath = str_replace('/core/public','',public_path('assets/dashboard/images/blocks/'));
-                                    }
                                     $images = [];
 
                                     if (File::exists($imagePath)) {
